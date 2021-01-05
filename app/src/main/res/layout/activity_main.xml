@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/parent_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/alert_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Alert Dialog"
+            app:layout_constraintBottom_toTopOf="@+id/dialogFragment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/dialog_fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Dialog Fragment"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_sheet"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/alert_dialog" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bottom_sheet"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Simple bottom sheet"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_sheet_fragment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dialog_fragment" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bottom_sheet_fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Bottom sheet fragment"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bottom_sheet"
+            app:layout_constraintVertical_chainStyle="spread" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include layout="@layout/bottom_sheet" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
